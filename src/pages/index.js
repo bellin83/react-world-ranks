@@ -1,13 +1,17 @@
 import Layout from "../components/Layout/Layout";
 import styles from "../styles/Home.module.css"
 import SearchInput from "../components/SearchInput/SearchInput";
+import CountriesTable from "../components/CountriesTable/CountriesTable";
 
 export default function Home({countries}) {
   console.log(countries)
   return (
     <Layout>
       <div className={styles.counts}>Found {countries.length}</div>
+
       <SearchInput placeholder="이름이나 지역을 입력하세요." />
+
+      <CountriesTable countries={countries} />
     </Layout>
   );
 }
