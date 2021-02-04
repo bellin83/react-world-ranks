@@ -23,6 +23,41 @@ const Country = ({country}) => {
           </div>
         </div>
       </div>
+
+      <div className={styles.details_panel}>
+        <h4 className={styles.details_panel_heading}>Details</h4>
+
+        <div className={styles.details_panel_row}>
+          <div className={styles.details_panel_label}>Capital</div>
+          <div className={styles.details_panel_value}>{country.capital}</div>
+        </div>
+
+        <div className={styles.details_panel_row}>
+          <div className={styles.details_panel_label}>Languages</div>
+          <div className={styles.details_panel_value}>
+            {country.languages.map(({name}) => name).join(", ")}
+          </div>
+        </div>
+
+        <div className={styles.details_panel_row}>
+          <div className={styles.details_panel_label}>Currencies</div>
+          <div className={styles.details_panel_value}>
+            {country.currencies.map(({name}) => name).join(", ")}
+          </div>
+        </div>
+
+        <div className={styles.details_panel_row}>
+          <div className={styles.details_panel_label}>Native name</div>
+          <div className={styles.details_panel_value}>
+            {country.nativeName}
+          </div>
+        </div>
+
+        <div className={styles.details_panel_row}>
+          <div className={styles.details_panel_label}>Gini</div>
+          <div className={styles.details_panel_value}>{country.gini} %</div>
+        </div>
+      </div>
     </Layout>
   );
 };
