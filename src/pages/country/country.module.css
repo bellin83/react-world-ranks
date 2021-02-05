@@ -31,7 +31,7 @@
     text-align: center;
 }
 
-.overview_lable {
+.overview_label {
     font-size: 14px;
     color: var(--text-secondary);
 }
@@ -57,5 +57,5 @@
 }
 
 .details_panel_label {
-    color: var(--text-color)
+    color: var(--text-secondary)
 }
