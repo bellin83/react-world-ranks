@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "./Layout.module.css";
 import {Brightness6Rounded} from "@material-ui/icons";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 const Layout = ({children, title="World Ranks"}) => {
   const [theme, setTheme] = useState("light");
