@@ -5,8 +5,6 @@ import CountriesTable from "../components/CountriesTable/CountriesTable";
 import {useState} from "react";
 
 export default function Home({countries}) {
-  console.log(countries)
-
   const [keyword, setKeyword] = useState("");
 
   const filteredCountries = countries.filter(country =>
@@ -19,17 +17,20 @@ export default function Home({countries}) {
     e.preventDefault();
 
     setKeyword(e.target.value.toLowerCase());
-  }
+  };
 
   return (
     <Layout>
-      <div className={styles.counts}>Found {countries.length}</div>
+      <div className={styles.inputContainer}>
+        <div className={styles.counts}>{countries.length}개 나라</div>
 
-      <SearchInput
-        placeholder="이름이나 지역을 입력하세요."
-        onChange={onInputChange}
-      />
-
+        <div className={styles.input}>
+          <SearchInput
+            placeholder="이름이나 지역을 입력하세요."
+            onChange={onInputChange}
+          />
+        </div>
+      </div>
       <CountriesTable countries={filteredCountries} />
     </Layout>
   );
@@ -44,4 +45,4 @@ export const getStaticProps = async () => {
       countries,
     }
   }
-}
+};

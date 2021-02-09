@@ -1,7 +1,7 @@
 import styles from './CountriesTable.module.css';
 import {KeyboardArrowDownRounded, KeyboardArrowUpRounded} from "@material-ui/icons";
 import React, {useState} from "react";
-import Link from "next/Link";
+import Link from "next/link";
 
 const orderBy = (countries, value, direction) => {
   if (direction === "asc") {
@@ -17,7 +17,7 @@ const orderBy = (countries, value, direction) => {
   }
 
   return countries
-}
+};
 
 const SortArrow = ({direction}) => {
   if (!direction) {
@@ -37,7 +37,7 @@ const SortArrow = ({direction}) => {
       </div>
     );
   }
-}
+};
 
 const CountriesTable = ({countries}) => {
   const [direction, setDirection] = useState();
@@ -53,15 +53,17 @@ const CountriesTable = ({countries}) => {
     } else {
       setDirection(null);
     }
-  }
+  };
 
   const setValueAndDirection = (value) => {
     switchDirection();
     setValue(value);
-  }
+  };
 
   return <div>
     <div className={styles.heading}>
+
+      <div className={styles.heading_flag}></div>
       <button
         className={styles.heading_name}
         onClick={() => setValueAndDirection("name")}
@@ -103,12 +105,17 @@ const CountriesTable = ({countries}) => {
     {orderCountries.map(country =>
       <Link href={`/country/${country.alpha3Code}`}>
         <div className={styles.row}>
+          <div className={styles.flag}>
+            <img src={country.flag} alt={country.name} />
+          </div>
           <div className={styles.name}>{country.name}</div>
           <div className={styles.population}>{country.population}</div>
+          <div className={styles.area}>{country.area || 0}</div>
+          <div className={styles.gini}>{country.gini || 0} %</div>
         </div>
       </Link>
     )}
   </div>
-}
+};
 
 export default CountriesTable;
