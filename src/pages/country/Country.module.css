@@ -33,7 +33,7 @@
 
 .overview_label {
   font-size: 14px;
-  color: var(--text-secondary);
+  color: var(--text-color-secondary);
 }
 
 .details_panel {
@@ -58,7 +58,7 @@
 }
 
 .details_panel_label {
-  color: var(--text-secondary);
+  color: var(--text-color-secondary);
 }
 
 .details_panel_borders {
@@ -81,7 +81,7 @@
 }
 
 .details_panel_borders_label {
-  color: var(--text-secondary);
+  color: var(--text-color-secondary);
   margin-bottom: 20px;
 }
 

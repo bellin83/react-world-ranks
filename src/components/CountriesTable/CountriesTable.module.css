@@ -20,7 +20,7 @@
 .heading_area,
 .heading_gini {
   flex: 4;
-  color: var(--text-secondary);
+  color: var(--text-color-secondary);
   font-weight: 500;
 
   display: flex;
